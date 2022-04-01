@@ -138,12 +138,13 @@ export default function App() {
             </div>
 
             <div className="stats">
+                {(statHistory.length>0)&&
                 <div className="stats--1">
                     <h2>Best Time: </h2>
                     <span>{("0" + Math.floor((highscore.time/60000) % 60)).slice(-2)}:</span>
                     <span>{("0" + Math.floor((highscore.time/1000) % 60)).slice(-2)}:</span>
                     <span>{("0" + ((highscore.time/10) % 100)).slice(-2)}</span>
-                </div>
+                </div>}
                 <div className="stats--1">
                     <h2>Time: </h2>
                         <span>{("0" + Math.floor((stats.time/60000) % 60)).slice(-2)}:</span>
@@ -154,10 +155,11 @@ export default function App() {
                     <h2>Rolls:</h2>
                     {stats.rolls}
                 </div>
+                {(statHistory.length>0)&&
                 <div className="stats--1">
                     <h2>Least Rolls:</h2> 
                     {highscore.rolls}
-                </div>
+                </div>}
             </div>
 
 
